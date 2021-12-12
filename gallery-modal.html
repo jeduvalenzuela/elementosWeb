@@ -1,0 +1,1146 @@
+<style>
+    /* = @media queries  info 
+===========================*/
+    
+    body:before {
+        margin: 1em;
+    }
+    
+    @media (min-width: 980px) {
+        body:before {
+            content: "@Media info: Large desktop";
+            color: black;
+        }
+    }
+    
+    @media (min-width: 768px) and (max-width: 979px) {
+        body:before {
+            content: "@Media info: Portrait tablet to landscape desktop";
+            color: black;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        body:before {
+            content: "@Media info: Landscape phone to portrait tablet ";
+            color: black;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body:before {
+            content: "@Media info: Landscape phones and down";
+            color: black;
+        }
+    }
+    /*    Basic
+================*/
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        height: 100%;
+    }
+    
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+    }
+    /*  PLACEHOLDER
+----------------------*/
+    
+    ::-webkit-input-placeholder {
+        color: #FFF;
+    }
+    
+    :-moz-placeholder {
+        color: #FFF;
+    }
+    
+    ::-moz-placeholder {
+        color: #FFF;
+    }
+    
+    :-ms-input-placeholder {
+        color: #FFF;
+    }
+    /*  SCROLLBAR
+-------------------*/
+    
+    ::-webkit-scrollbar {
+        width: 0.2em;
+        background: #e74c3c;
+    }
+    
+    ::-webkit-scrollbar-track {}
+    
+    ::-webkit-scrollbar-thumb {
+        background: #fff;
+    }
+    
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #fff;
+    }
+    /*  SELECTION
+-------------------*/
+    
+    ::selection {
+        background: #999;
+        color: #fff;
+    }
+    
+    ::-moz-selection {
+        background: #999;
+        color: #fff;
+    }
+    /* === Links Styles === */
+    
+    a {
+        text-decoration: underline;
+        -webkit-transition: 0.25s;
+        -moz-transition: 0.25s;
+        -o-transition: 0.25s;
+        transition: 0.25s;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    a:focus {
+        outline: 0;
+        outline: 0 auto -webkit-focus-ring-color;
+        outline-offset: 0;
+    }
+    /*	Layout
+=======================*/
+    
+    body {
+        background: #EEE;
+        overflow-X: hidden;
+        font-size: 13px;
+        font-family: 'Metrophobic', sans-serif;
+        font-weight: 400;
+    }
+    
+    .wrapper {
+        margin: 5% auto;
+        display: block;
+        width: 96%;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .wrapper:before {
+        content: "";
+        display: table;
+    }
+    
+    .wrapper_inner {
+        padding: 0.2em;
+        margin: 0;
+    }
+    
+    .gallery {}
+    
+    .gallery_item {
+        float: left;
+        width: 24.59%;
+        display: inline-block;
+        margin: 0 auto;
+        margin-right: 0.25em;
+        margin-bottom: 0.5em;
+        padding: 0.5em;
+        background: #FFF;
+        border: 1px solid #F3F0F0;
+        position: relative;
+        -webkit-box-shadow: 0 1px 2px #AFAFAF;
+        -moz-box-shadow: 0 1px 2px #AFAFAF;
+        box-shadow: 0 1px 2px #AFAFAF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    .gallery_item_preview {
+        background: #fff;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_preview a {
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        color: #333;
+        text-decoration: none;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_preview a:hover {
+        color: #777;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_preview a svg.gallery_top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        stroke: none;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_preview a:hover svg.gallery_top {
+        top: -10em;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_hide_top {
+        top: -10em !important;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_preview a:before {
+        content: "Click to view";
+        position: absolute;
+        top: 0.5em;
+        left: -30em;
+        background-color: #FFF;
+        background-color: rgba(255, 255, 255, 0.99);
+        color: #F57171;
+        padding: 0.56em 1em;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+        border-radius: 5px 0 0 0;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .gallery_item_preview a:hover:before {
+        left: 0.5em;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .gallery_item_preview a h3 {
+        font-family: 'Leckerli One', cursive;
+    }
+    
+    .gallery_item_preview a img {
+        display: block;
+        width: 100%;
+        height: 150px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_item_full {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 100;
+        overflow: hidden;
+    }
+    
+    .gallery_item_full img {
+        display: block;
+        width: 100%;
+    }
+    
+    .box {
+        margin: auto;
+        background: #FFF;
+        padding: 2em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        width: 50%;
+        text-align: left;
+        border: 1px solid #DADADA;
+    }
+    
+    .box h3 {
+        font-family: 'Leckerli One', cursive;
+        color: #F88484;
+    }
+    
+    .cl {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        color: #777;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2em;
+    }
+    
+    .cl:hover {
+        color: #F88484;
+    }
+    /*  Responsive video 
+=============================*/
+    
+    .video {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video iframe,
+    .video object,
+    .video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /*  list style
+=============================*/
+    
+    .icon_list {
+        width: 30px;
+        height: 30px;
+        display: block;
+        padding: 0.5em;
+        text-decoration: none;
+        line-height: 0.4em;
+        background: #FFF;
+        color: #838383;
+        border: 1px solid #C2C2C2;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        position: absolute;
+        right: 0.3em;
+        top: 0.3em;
+        word-break: break-all;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .icon_list:hover {
+        background: #f55;
+        color: #fff;
+        border-color: #f11;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .icon_list_open {
+        background: #f55 !important;
+        color: #fff !important;
+    }
+    
+    .gallery_item_list {
+        float: none !important;
+        display: block !important;
+        width: 50%;
+        margin: auto;
+        margin-top: 0.5em;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    
+    .gallery_line {
+        width: 130px !important;
+        height: 100px !important;
+        display: inline-block !important;
+        float: left !important;
+        margin-right: 1em !important;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    /*	Simple animation
+=======================*/
+    
+    .efIn {
+        -webkit-animation: fx_in 0.65s 1 ease-in-out;
+        -moz-animation: fx_in 0.65s 1 ease-in-out;
+        -ms-animation: fx_in 0.65s 1 ease-in-out;
+        -o-animation: fx_in 0.65s 1 ease-in-out;
+        animation: fx_in 0.65s 1 ease-in-out;
+    }
+    
+    .efOut {
+        -webkit-animation: fx_out 0.7s 1 ease-in-out;
+        -moz-animation: fx_out 0.7s 1 ease-in-out;
+        -ms-animation: fx_out 0.7s 1 ease-in-out;
+        -o-animation: fx_out 0.7s 1 ease-in-out;
+        animation: fx_out 0.7s 1 ease-in-out;
+    }
+    /*	Keyframes
+==============*/
+    
+    @-webkit-keyframes fx_in {
+        from {
+            width: 0;
+            height: 0;
+            -webkit-border-radius: 100%;
+            opacity: 0;
+        }
+        50% {
+            -webkit-box-shadow: inset 0 0 0 0 #fff;
+        }
+        to {
+            width: 100%;
+            height: 100%;
+            -webkit-border-radius: 0;
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes fx_out {
+        from {
+            width: 100%;
+            height: 100%;
+            -webkit-border-radius: 0;
+            -webkit-box-shadow: inset 0 0 0 0 #fff;
+            opacity: 1;
+        }
+        50% {
+            -webkit-box-shadow: inset 0 0 0 80em #fff;
+        }
+        to {
+            width: 0;
+            height: 0;
+            -webkit-border-radius: 100%;
+            opacity: 0;
+        }
+    }
+    /* moz */
+    
+    @-moz-keyframes fx_in {
+        from {
+            width: 0;
+            height: 0;
+            -moz-border-radius: 100%;
+            opacity: 0;
+        }
+        50% {
+            -moz-box-shadow: inset 0 0 0 0 #fff;
+        }
+        to {
+            width: 100%;
+            height: 100%;
+            -moz-border-radius: 0;
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes fx_out {
+        from {
+            width: 100%;
+            height: 100%;
+            -moz-border-radius: 0;
+            -moz-box-shadow: inset 0 0 0 0 #fff;
+            opacity: 1;
+        }
+        50% {
+            -moz-box-shadow: inset 0 0 0 80em #fff;
+        }
+        to {
+            width: 0;
+            height: 0;
+            -moz-border-radius: 100%;
+            opacity: 0;
+        }
+    }
+    /* o */
+    
+    @-o-keyframes fx_in {
+        from {
+            width: 0;
+            height: 0;
+            -o-border-radius: 100%;
+            opacity: 0;
+        }
+        50% {
+            -o-box-shadow: inset 0 0 0 0 #fff;
+        }
+        to {
+            width: 100%;
+            height: 100%;
+            -o-border-radius: 0;
+            opacity: 1;
+        }
+    }
+    
+    @-o-keyframes fx_out {
+        from {
+            width: 100%;
+            height: 100%;
+            -o-border-radius: 0;
+            -o-box-shadow: inset 0 0 0 0 #fff;
+            opacity: 1;
+        }
+        50% {
+            -o-box-shadow: inset 0 0 0 80em #fff;
+        }
+        to {
+            width: 0;
+            height: 0;
+            -o-border-radius: 100%;
+            opacity: 0;
+        }
+    }
+    /* ms */
+    
+    @-ms-keyframes fx_in {
+        from {
+            width: 0;
+            height: 0;
+            -ms-border-radius: 100%;
+            opacity: 0;
+        }
+        50% {
+            -ms-box-shadow: inset 0 0 0 0 #fff;
+        }
+        to {
+            width: 100%;
+            height: 100%;
+            -ms-border-radius: 0;
+            opacity: 1;
+        }
+    }
+    
+    @-ms-keyframes fx_out {
+        from {
+            width: 100%;
+            height: 100%;
+            -ms-border-radius: 0;
+            -ms-box-shadow: inset 0 0 0 0 #fff;
+            opacity: 1;
+        }
+        50% {
+            -ms-box-shadow: inset 0 0 0 80em #fff;
+        }
+        to {
+            width: 0;
+            height: 0;
+            -ms-border-radius: 100%;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fx_in {
+        from {
+            width: 0;
+            height: 0;
+            border-radius: 100%;
+            opacity: 0;
+        }
+        50% {
+            box-shadow: inset 0 0 0 0 #fff;
+        }
+        to {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fx_out {
+        from {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: inset 0 0 0 0 #fff;
+            opacity: 1;
+        }
+        50% {
+            box-shadow: inset 0 0 0 80em #fff;
+        }
+        to {
+            width: 0;
+            height: 0;
+            border-radius: 100%;
+            opacity: 0;
+        }
+    }
+    /* Large desktop */
+    
+    @media (min-width: 980px) {
+        .gallery_item_list {
+            width: 50% !important;
+        }
+        .gallery_item {
+            width: 24.45%;
+        }
+        .gallery_item_preview a img {
+            height: 180px;
+        }
+        .box {
+            width: 60%;
+            max-height: 550px;
+        }
+    }
+    /* Portrait tablet to landscape and desktop */
+    
+    @media (min-width: 768px) and (max-width: 979px) {
+        .gallery_item_list {
+            width: 60% !important;
+        }
+        .gallery_item {
+            width: 32.83%;
+        }
+        .gallery_item_preview a img {
+            height: 180px;
+        }
+        .box {
+            width: 70%;
+            max-height: 550px;
+        }
+    }
+    /* Landscape phone to portrait tablet */
+    
+    @media (max-width: 767px) {
+        .gallery_item_list {
+            width: 70% !important;
+        }
+        .gallery_item {
+            width: 49.3%;
+        }
+        .gallery_item_preview a img {
+            height: 180px;
+        }
+        .box {
+            margin: auto;
+            padding: 4em 1em 1em 1em;
+            width: 80%;
+            height: 500px;
+        }
+        .cl {
+            top: 0;
+            right: 0.5em;
+        }
+    }
+    /* Landscape phones and down */
+    
+    @media (max-width: 480px) {
+        .gallery_item_list {
+            width: 100% !important;
+        }
+        .gallery_item {
+            width: 100%;
+        }
+        .gallery_item_preview a img {
+            height: 200px;
+        }
+        .box {
+            background: #F8F8F8;
+            padding: 4em 1em 1em 1em;
+            width: 100%;
+            height: auto;
+        }
+        .cl {
+            top: 0;
+            right: 0.5em;
+        }
+        .gallery_item_list {
+            width: 100% !important;
+        }
+    }
+</style>
+
+<!-- google fonts-->
+<link href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic' rel='stylesheet' type='text/css'>
+
+<a href="#" class="icon_list" data-js="list">
+    <span>• -</span>
+    <span>• -</span>
+    <span>• -</span>
+</a>
+
+<div class="wrapper">
+    <div class="wrapper_inner">
+        <!-- Gallery -->
+        <section class="gallery">
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="1">
+           
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            
+            <img src="https://25.media.tumblr.com/1adc4029ef3a31124f222add70fa3553/tumblr_n2k1499dIp1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span>
+                </a>
+
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="1" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/1adc4029ef3a31124f222add70fa3553/tumblr_n2k1499dIp1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="2">
+            <svg fill="#5690F7" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple Video</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="2" class="gallery_item_full">
+                    <div class="box">
+
+                        <div class="video">
+                            <iframe src="https://www.youtube.com/embed/gLg6qxkQ94A"></iframe>
+                        </div>
+
+                        <h3>Example Youtube video</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="3">
+            <svg fill="#5690F7" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/5c73892a883adf41e9b8b7fe807e19b8/tumblr_n2k10foRBd1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple Video 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="3" class="gallery_item_full">
+                    <div class="box">
+                        <div class="video">
+                            <iframe src="//player.vimeo.com/video/89918113"></iframe>
+                        </div>
+                        <h3>Example Vimeo video</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="4">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="4" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="5">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="5" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="6">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/6c0e95d27b8509096274f244ff5aeea9/tumblr_n21lusI21V1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="6" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/6c0e95d27b8509096274f244ff5aeea9/tumblr_n21lusI21V1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="7">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/bb592565a7d8c4f004973fe3045cac6f/tumblr_n21lvqbJ2m1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="7" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://24.media.tumblr.com/bb592565a7d8c4f004973fe3045cac6f/tumblr_n21lvqbJ2m1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="8">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/0a4075c0b36aa37ddbd85d4e75afbeca/tumblr_n21lwpVo3F1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="8" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/0a4075c0b36aa37ddbd85d4e75afbeca/tumblr_n21lwpVo3F1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="9">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 175.81699,28.832771 176.47059,0.72819569 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/40b727a4d9ea5164103d81590bde4ef6/tumblr_n2k0y8bxXE1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="9" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://24.media.tumblr.com/40b727a4d9ea5164103d81590bde4ef6/tumblr_n2k0y8bxXE1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="10">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="10" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="11">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/f74ff1d9acdf8c43cd1897e01bc669e6/tumblr_n2k114hDQX1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="11" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://24.media.tumblr.com/f74ff1d9acdf8c43cd1897e01bc669e6/tumblr_n2k114hDQX1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Gallery  item -->
+            <div class="gallery_item">
+                <!-- Gallery  item preview -->
+                <span class="gallery_item_preview">
+          <a href="#" data-js="12">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/57a652bfb91e06d3d1f596c0aa5f7871/tumblr_n2k120WsWM1st5lhmo1_1280.jpg" alt="" />
+            <span>
+              <h3>Exmaple photo</h3>
+            </span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </a>
+                </span>
+                <!-- Gallery  item full -->
+                <div data-lk="12" class="gallery_item_full">
+                    <div class="box">
+                        <img src="https://24.media.tumblr.com/57a652bfb91e06d3d1f596c0aa5f7871/tumblr_n2k120WsWM1st5lhmo1_1280.jpg" alt="" />
+                        <h3>Example image</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    var gallery = (function() {
+
+        'use strict';
+
+        // vars
+        var gal_item = $('.gallery_item'),
+            gal_img = $('.gallery_item_preview a img'),
+            gal_full = $('.gallery_item_full'),
+            gal_box = $('.box'),
+            gal_top = $('.gallery_top');
+
+
+        return {
+            // this.js(obj)
+            js: function(e) {
+                return $("[data-js=" + e + "]");
+            },
+            // this.lk(obj)
+            lk: function(e) {
+                return $("[data-lk=" + e + "]");
+            },
+            // Ready functions
+            ready_: function() {
+                this.events();
+            },
+            //  functions
+            events: function() {
+                var self = this;
+                // add close link
+                gal_full.append('<a href="#" data-js="cl" class="cl">X</a>');
+                // Get all data js and add clickOn function
+                var k = $('a[data-js]');
+                k.each(function(i, v) {
+                    i = i + 1;
+                    self.clickOn(i);
+                });
+                // close on click
+                self.js('cl').on("click", function(e) {
+                    e.preventDefault();
+                    self.fx_out(gal_full);
+                    self.fx_out(gal_box);
+                });
+
+                // list style
+                self.js('list').on("click", function(e) {
+                    e.preventDefault();
+                    // toggle class
+                    gal_item.toggleClass('gallery_item_list');
+                    gal_img.toggleClass('gallery_line');
+
+
+                    // change icon style
+                    if (gal_item.hasClass('gallery_item_list')) {
+                        $(this).addClass('icon_list_open')
+                            .html('<span>•••</span>' +
+                                '<span>•••</span>' +
+                                '<span>•••</span>');
+                        gal_top.attr("class", "gallery_top gallery_hide_top");
+                    } else {
+                        $(this).removeClass('icon_list_open')
+                            .html('<span>• -</span>' +
+                                '<span>• -</span>' +
+                                '<span>• -</span>');
+                        gal_top.attr("class", "gallery_top");
+                    }
+                });
+            },
+            // Show on click
+            clickOn: function(i) {
+                var self = this;
+                this.js(i).on('click', function(e) {
+                    e.preventDefault();
+                    self.fx_in(self.lk(i));
+                    self.fx_in(gal_box);
+                });
+            },
+            // out function
+            fx_out: function(el) {
+                el.addClass('efOut')
+                    .delay(500)
+                    .fadeOut('fast')
+                    .removeClass('efIn');
+                // show scroll
+                $('body').css({
+                    overflow: 'auto'
+                });
+                return false;
+            },
+            // in function
+            fx_in: function(el) {
+                el.removeClass('efOut')
+                    .show(200)
+                    .addClass('efIn');
+                // hide scroll
+                $('body').css({
+                    overflow: 'hidden'
+                });
+                return false;
+            }
+        };
+    })();
+    // ready function of gallery
+    gallery.ready_();
+</script>
